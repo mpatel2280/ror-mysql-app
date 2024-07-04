@@ -1,0 +1,22 @@
+# config/database.yml
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: root
+  password: root
+  host: localhost
+
+development:
+  <<: *default
+  database: ror_dev
+
+test:
+  <<: *default
+  database: ror_test
+
+production:
+  <<: *default
+  database: ror_prod
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>

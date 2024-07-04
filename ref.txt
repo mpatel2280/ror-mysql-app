@@ -1,0 +1,10 @@
+sudo apt-get install build-essential libmysqlclient-dev
+gem install mysql2
+
+
+rails db:create
+
+rails generate model Article title:string body:text
+rails db:migrate
+
+rails generate controller Articles
