@@ -1,5 +1,8 @@
 # app/controllers/articles_controller.rb
+require 'action_text'
 class ArticlesController < ApplicationController
+  include ActionText::Engine.helpers
+
     def index
       @articles = Article.all
     end
@@ -12,6 +15,8 @@ class ArticlesController < ApplicationController
       @article = Article.new
     end
   
+    # TODO - rails notes TODO verification
+    # FIXME - rails notes FIXME verification
     def create
       @article = Article.new(article_params)
   
