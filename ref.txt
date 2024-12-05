@@ -8,3 +8,9 @@ rails generate model Article title:string body:text
 rails db:migrate
 
 rails generate controller Articles
+
+
+- https://github.com/Shopify/maintenance_tasks
+
+rails generate maintenance_tasks:task update_articles
+http://localhost:3000/maintenance_tasks/tasks/Maintenance::UpdateArticlesTask
