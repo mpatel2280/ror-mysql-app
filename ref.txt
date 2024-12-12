@@ -14,3 +14,24 @@ rails generate controller Articles
 
 rails generate maintenance_tasks:task update_articles
 http://localhost:3000/maintenance_tasks/tasks/Maintenance::UpdateArticlesTask
+
+
+- has_many :through example
+rails generate scaffold Student name:string email:string
+rails generate scaffold Course title:string description:string
+rails generate scaffold Assignment title:string description:string
+
+# Create students
+student1 = Student.create(name: "Stud1", email: "stud1@email.com")
+student2 = Student.create(name: "Stud2", email: "stud2@email.com")
+
+# Create courses
+course1 = Course.create(title: "Math", description: "course1")
+course2 = Course.create(title: "Science", description: "course2")
+
+# Enroll students in courses
+Assignment.create(student: student1, course: course1, grade: "A")
+Assignment.create(student: student1, course: course2, grade: "B")
+Assignment.create(student: student2, course: course1, grade: "B")
+
+
