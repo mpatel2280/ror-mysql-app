@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :assignments
+  resources :courses
+  resources :students
   mount MaintenanceTasks::Engine, at: "/maintenance_tasks"
   resources :profiles
   resources :users
