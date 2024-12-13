@@ -68,3 +68,8 @@ end
 
 gem 'mysql2'
 gem "maintenance_tasks", "~> 2.10"
+
+group :development do
+  gem 'brakeman'
+end
+
